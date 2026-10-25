@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "Discord Media Relay",
+    "version": "1.0.0",
+    "description": "Supported web media'yı seçilen Discord kanallarına gönderir.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "discord-media-relay@example.org",
+            "strict_min_version": "109.0"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "overlay.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "48": "icons/icon48.svg",
+        "96": "icons/icon96.svg"
+    }
+}

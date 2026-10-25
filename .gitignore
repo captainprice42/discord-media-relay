@@ -1,0 +1,24 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+temp_videos/
+temp_archive/
+temp_profile/
+temp_work/
+logs/
+
+*.mp4
+*.part
+*.rar
+*.zip
+yt-dlp.exe
+
+Discord Video Saver/
+Yeni klasör/
+noalang.bat
+query
+
+.DS_Store
+Thumbs.db

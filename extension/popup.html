@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 320px;
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: #1e1f22;
+            color: #dcddde;
+            padding: 16px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #8e9297;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            background: #2b2d31;
+            color: #dcddde;
+            border: 1px solid #3f4147;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 13px;
+            margin-bottom: 14px;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #5865f2;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 100%;
+            background: #5865f2;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .btn:hover {
+            background: #4752c4;
+        }
+
+        .btn-secondary {
+            background: #2b2d31;
+            border: 1px solid #3f4147;
+            margin-bottom: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #3f4147;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+            min-height: 18px;
+        }
+
+        .status.ok {
+            color: #57f287;
+        }
+
+        .status.err {
+            color: #ed4245;
+        }
+
+        .divider {
+            border-top: 1px solid #2b2d31;
+            margin: 14px 0;
+        }
+
+        #defaultChannelSelect {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🎬 Discord Video Saver</h2>
+
+    <label>API Adresi</label>
+    <input type="text" id="apiUrl" placeholder="http://127.0.0.1:3541">
+
+    <label>API Anahtarı</label>
+    <input type="password" id="apiKey" placeholder=".env içindeki API_KEY değeri">
+
+    <div class="divider"></div>
+
+    <label>Varsayılan Kanal (Görseller İçin)</label>
+    <button class="btn btn-secondary" id="loadChannelsBtn">Kanalları Yükle</button>
+    <select id="defaultChannelSelect">
+        <option value="">Kanal seçin…</option>
+    </select>
+
+    <div class="divider"></div>
+
+    <button class="btn" id="saveBtn">Kaydet</button>
+    <div class="status" id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
